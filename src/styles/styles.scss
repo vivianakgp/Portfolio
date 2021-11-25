@@ -1,8 +1,10 @@
+@import './menu.scss';
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
-#banner{
-
+.banner{
+    height: 100vh;
+    background-color: rgb(233, 173, 173);
 }

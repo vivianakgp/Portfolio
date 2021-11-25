@@ -1,7 +1,45 @@
+#menu {
+  position: fixed;
+  width: 100vw;
+  height: 60px;
+  background-color: rgba(92, 90, 90, 0.534);
+}
+
+#menu input#iconMenu {
+  visibility: hidden;
+}
+
+#menu div.menu__container > ul {
+  list-style-type: none;
+}
+
+#menu input#iconMenu, #menu input#iconMenu ~ label {
+  position: absolute;
+  right: 10px;
+}
+
+#menu input#iconMenu ~ div.menu__container {
+  background-color: burlywood;
+  position: absolute;
+  right: -100vw;
+  top: 60px;
+  width: 100vw;
+  height: 100vh;
+}
+
+#menu input#iconMenu:checked ~ div.menu__container {
+  right: 0px;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+.banner {
+  height: 100vh;
+  background-color: #e9adad;
 }
 
 /*# sourceMappingURL=styles.css.map */
