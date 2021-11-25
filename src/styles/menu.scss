@@ -1,32 +1,59 @@
+// // // use de same classes// // //
+.centerItems{
+    display:grid;
+    place-items: center;
+
+}
 #menu{
     position:fixed;
+    display:flex;
+    justify-content: space-between;
     width: 100vw;
     height: 60px;
-    background-color: rgba(92, 90, 90, 0.534);
+    padding: 0 20px;
+    transition: all 0.8s linear;
+    // test
+    background-color: rgba(0, 0, 0, 0.705);
 }
-#menu input#iconMenu{
-    visibility:hidden
-
+// // // logo // // // //
+#menu div.menu__logo{
+    width:118px;
+    margin-left: 7px;
+    //background-color: rgb(83, 82, 82);
+    @extend .centerItems;
 }
-#menu div.menu__container > ul{
-    list-style-type: none;
+#menu div.menu__logo img{
+    width:100%;
+    height: auto;
 }
-#menu input#iconMenu, #menu input#iconMenu ~ label{
-    position:absolute;
-    right: 10px;//no quitar este
-
+// // // icon // // // //
+#menu div.menu__icon{
+    //background-color: rgb(112, 108, 108);
+    width: 50px;
+    @extend .centerItems;
 }
-#menu input#iconMenu ~ div.menu__container{
+#menu div.menu__icon > i{
+    color:rgba(255, 255, 255, 0.678);
+}
+// /// // container menu  // // // //
+#menu div#menu__container {
     background-color: burlywood;
     position: absolute;
     right:-100vw;
-    top:60px;
+    top:0;
     width: 100vw;
     height: 100vh;
+    transition: all 0.3s linear;
 }
-#menu input#iconMenu:checked  ~ div.menu__container{
-    //position: relative;
-    //right:-275px;
-    right:0px;
+#menu div#menu__container > ul{
+    list-style-type: none;
 }
+
+// // // dynamic class // // // //
+.menuScrollUp{
+    transform:translateY(-60px) ;
+    background-color: rgba(0, 0, 0, 0.705);
+}
+
+
 

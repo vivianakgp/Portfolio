@@ -1,34 +1,54 @@
+.centerItems, #menu div.menu__icon, #menu div.menu__logo {
+  display: grid;
+  place-items: center;
+}
+
 #menu {
   position: fixed;
+  display: flex;
+  justify-content: space-between;
   width: 100vw;
   height: 60px;
-  background-color: rgba(92, 90, 90, 0.534);
+  padding: 0 20px;
+  transition: all 0.8s linear;
+  background-color: rgba(0, 0, 0, 0.705);
 }
 
-#menu input#iconMenu {
-  visibility: hidden;
+#menu div.menu__logo {
+  width: 118px;
+  margin-left: 7px;
 }
 
-#menu div.menu__container > ul {
-  list-style-type: none;
+#menu div.menu__logo img {
+  width: 100%;
+  height: auto;
 }
 
-#menu input#iconMenu, #menu input#iconMenu ~ label {
-  position: absolute;
-  right: 10px;
+#menu div.menu__icon {
+  width: 50px;
 }
 
-#menu input#iconMenu ~ div.menu__container {
+#menu div.menu__icon > i {
+  color: rgba(255, 255, 255, 0.678);
+}
+
+#menu div#menu__container {
   background-color: burlywood;
   position: absolute;
   right: -100vw;
-  top: 60px;
+  top: 0;
   width: 100vw;
   height: 100vh;
+  transition: all 0.3s linear;
 }
 
-#menu input#iconMenu:checked ~ div.menu__container {
-  right: 0px;
+#menu div#menu__container > ul {
+  list-style-type: none;
+}
+
+.menuScrollUp {
+  transform: translateY(-60px);
+  background-color: rgba(0, 0, 0, 0.705);
 }
 
 * {
@@ -37,9 +57,22 @@
   margin: 0;
 }
 
+body {
+  background-image: url("https://www.onlinelogomaker.com/blog/wp-content/uploads/2017/06/spa-logo-design.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 .banner {
+  padding-top: 100px;
   height: 100vh;
-  background-color: #e9adad;
+  background-color: #444247;
+  background-image: url("../assets/image/240849687_100983788980471_8425317334463107899_n.png");
+}
+
+.ejdiv {
+  height: 800px;
+  background-color: mediumpurple;
 }
 
 /*# sourceMappingURL=styles.css.map */
