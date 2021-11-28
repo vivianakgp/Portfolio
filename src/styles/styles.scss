@@ -1,23 +1,92 @@
 @import './menu.scss';
 * {
-    box-sizing: border-box;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    font-size:11px;
+
 }
 body{
-    background-image:url('https://www.onlinelogomaker.com/blog/wp-content/uploads/2017/06/spa-logo-design.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
+    font-family:"open sans", sans-serif;
+    //background-color: rgba(53, 40, 60, 1);
+    // overflow-x y overflow-y to avoid unwanted scrolling
+    //overflow-x: hidden;
+    //overflow-y: auto;
 }
-
-.banner{
-    padding-top:100px ;
+div.banner{
+    width: 100%;
     height: 100vh;
-    background-color: rgb(68, 66, 71);
+    color: rgba(254, 194, 235, 1);
+    font-family: inconsolata,monospace;
+    background-color: rgba(53, 40, 60, 1);
 }
+/* Nesting - here de common styles that the sections have */
+.section{
+    padding: 0 27px;
+    // test
+    border-bottom: 2px solid black;
+    margin: 30px 0;
+    h1.section__head{
+        font-family: inconsolata,monospace;
+        font-size: 2rem;
+        line-height: 1;
+        font-weight: 400;
+    }
+    /* pseudo elements */
+    h1.section__head::before{
+        content: "<";
+    }
+    h1.section__head::after{
+        content: ">";
+    }
+    div.section__end::after{
+        content: "</" attr(data-text) ">";
+        font-family: inconsolata,monospace;
+        font-size: 2rem;
+        line-height: 1rem;
+        font-weight: 400;
+    }
+    /*  end */
+}
+/* projects*/
+section.section.projects{
+    background-color: rgb(73, 55, 75);
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    h1.section__head{
+        grid-column: 1/-1;
+        background-color: rgba(255, 235, 205, 0.479);
+    }
+    div.section__end{
+        grid-column: 1/-1;
+        background-color: rgba(255, 235, 205, 0.479);
+    }
+    div.card{
+        padding: 1rem;
+        border: 1px solid white;
+        grid-column: 1/-1;
+    }
+}
+/* contact */
+// none en label
+.stylesLabel::after{
+    //display: inline-block;
+    content: attr(data-text);
+    //pointer-events: none;
+}
+/* @ medias*/
+@media only screen and(min-width:768px){
+    section.section.projects{
+        div.card{
+            grid-column: span 3;
+        }
+    }
+    section.section.contact{
+        div.contact__container{
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    }
 
-.ejdiv{
-    height: 800px;
-    background-color: mediumpurple;
 }

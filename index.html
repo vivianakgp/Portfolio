@@ -12,24 +12,72 @@
     <header>
         <nav id="menu">
             <div class="menu__logo">FULL STACK DEVELOPER</div>
-            <div class="menu__icon"><!-- fa-lg o fa-2x--><i id="iconOpenMenu" class="fas fa-bars fa-lg"></i></div>
+            <div class="menu__icon"><!-- fa-lg o fa-2x--><i id="iconOpenMenu" class="fas fa-bars fa-2x"></i></div>
             <div id="menu__container">
-                <i id="iconCloseMenu" class="fas fa-times"></i>
+                <i id="iconCloseMenu" class="fas fa-times fa-lg"></i>
                 <ul>
-                    <li>Projects</li>
-                    <li>About</li>
-                    <li>Contact me</li>
+                    <li><a href="">Projects</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact me</a></li>
                 </ul>
             </div>
         </nav>
-        <section class="banner">
-        </section>
+        <div class="banner">
+            <p>VIVIANA GOMEZ FULL STACK DEVELOPER</p>
+        </div>
     </header>
     <main>
-        <p class="ejparrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. In earum maxime, ab a saepe asperiores sed officia excepturi error facere laudantium inventore, quod nemo quae veniam dolores minus assumenda sapiente similique corrupti voluptatibus deleniti expedita? Aliquid quod nisi, deleniti quasi esse et consequatur, at illo provident iure ducimus voluptatem quia, eligendi sed fugit? Iste, eaque laudantium labore sint tenetur ducimus, ea commodi praesentium sit odio aliquid voluptates delectus. Mollitia repellendus unde ducimus explicabo animi perspiciatis distinctio quo dolores consequuntur repellat enim eos libero accusantium tenetur veritatis vero corrupti ut, vitae dignissimos amet, assumenda delectus maxime reprehenderit! Nesciunt porro, dolor quaerat tenetur blanditiis saepe nemo repellendus. Veniam repellat tempora accusamus corrupti similique tempore reprehenderit quasi totam officia, minus quis aliquid, consequuntur possimus. Laborum officiis deserunt ex voluptatem consequatur ratione aliquam quia nihil consectetur, facere velit eius recusandae doloremque atque, libero, omnis perferendis quibusdam eum blanditiis facilis quas magni iusto eveniet architecto. Aperiam sunt asperiores repellendus corporis qui. Earum esse quis accusantium ullam architecto dicta modi totam, obcaecati repellat corporis quae perspiciatis magnam necessitatibus aliquid nam id. Voluptates illo vel, ut nulla facere iusto pariatur sapiente ullam blanditiis quas corrupti quia optio ratione, quos neque nisi sequi! Alias aspernatur molestias minima tenetur!</p>
-        <div class="ejdiv"></div>
+        <section id="projects" class="section projects">
+            <h1 class="section__head">projects</h1>
+            <div class="card">project 1</div>
+            <div class="card">project 2</div>
+            <div class="card">project 3</div>
+            <div class="card">project 4</div>
+            <div class="section__end" data-text="projects"></div>
+        </section>
+        <section id="about" class="section contact">
+            <h1 class="section__head">about</h1>
+            <div class="contact__container">
+                <div class="photo"><img src="https://i.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U"></div>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo itaque numquam optio. Ab explicabo similique quasi dignissimos inventore magni ad accusantium mollitia deserunt cupiditate asperiores debitis totam sequi ipsum ullam, nesciunt perspiciatis aut quia est fugiat id earum excepturi ex corporis! Officiis accusantium at harum totam facilis ex placeat deleniti.</p>
+            </div>
+            <button>Curriculum vitae (pdf)</button>
+            <div class="section__end" data-text="about"></div>
+
+        </section>
+        <section id="contact" class="section">
+            <h1 class="section__head">contact</h1>
+            <p>Feel free to send an e-mail on <a href="">vivianakgp@gmail.com</a></p>
+            <p>Alternatively, you can also drop-in a mail here!</p>
+            <form id="contactForm" class="contact__form">
+                <p>
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" autocorrect="off" autocapitalize="on" required pattern=".{3}">
+                    <span class="stylesLabel" data-text="Name"></span>
+                </p>
+                <p>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" autocorrect="off" autocapitalize="off" required >
+                    <span class="stylesLabel" data-text="Email"></span>
+                </p>
+                <p>
+                    <label for="message">message</label>
+                    <textarea id="message" name="message" autocorrect="off" autocapitalize="off" autocomplete="on" required></textarea>
+                    <span class="stylesLabel" data-text="Message"></span>
+                </p>
+                <p>
+                    <input type="Submit" value="Submit" title="Submit">
+                </p>
+            </form>
+            <div class="contact__socialNetwork">
+                <i class="fab fa-github"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+            <div class="section__end" data-text="contact"></div>
+        </section>
     </main>
     <footer>
+        <span>make with <i class="far fa-heart"></i> and <i class="fas fa-coffee"></i> 2022</span>
     </footer>
     <script type="module" src="./src/index.js"></script>
 </body>
