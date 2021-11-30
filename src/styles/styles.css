@@ -12,22 +12,26 @@
   height: 60px;
   min-width: 320px;
   max-width: 1400px;
-  padding: 0 1rem;
+  padding: 0 27px;
   transition: all 0.5s linear;
-  background-color: rgba(0, 0, 0, 0.705);
+  text-transform: uppercase;
 }
 
 #menu div.menu__logo {
-  width: 118px;
-  margin-left: 7px;
+  font-size: 8px;
+  letter-spacing: 5px;
 }
-#menu div.menu__logo img {
-  width: 100%;
-  height: auto;
+#menu div.menu__logo a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+}
+#menu div.menu__logo a span.highLetter {
+  display: inline-block;
+  margin: 0 5px;
+  color: #fec2eb;
 }
 
 #menu div.menu__icon {
-  background-color: #706c6c;
   width: 50px;
 }
 #menu div.menu__icon i#iconOpenMenu {
@@ -47,8 +51,10 @@
   font-size: 18px;
   text-align: center;
   color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 2px;
+  font-weight: 800;
   transition: all 0.3s linear;
-  background-color: #202723;
+  background-color: #35283c;
 }
 #menu div#menu__container i#iconCloseMenu {
   color: rgba(255, 255, 255, 0.9);
@@ -57,7 +63,7 @@
 
 #menu div#menu__container > ul {
   list-style-type: none;
-  margin: 3.5rem 0;
+  margin-top: 100px;
   cursor: pointer;
 }
 #menu div#menu__container > ul li {
@@ -68,9 +74,12 @@
   text-decoration: none;
 }
 
-.menuScrollUp {
+.menuScrollDown {
   transform: translateY(-60px);
-  background-color: rgba(0, 0, 0, 0.705);
+}
+
+.animationRotate {
+  animation: rotate 2s 3s;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -98,11 +107,34 @@
     display: inline;
   }
 }
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.typingStyles, div.banner div.banner__content span.titleEnd, div.banner div.banner__content h1.title span.high, div.banner div.banner__content h1.title {
+  overflow: hidden;
+  width: 0;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  line-height: 57px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #c22085;
+  text-transform: uppercase;
+  font-family: inconsolata, monospace;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-size: 11px;
+}
+* html {
+  font-size: 10px;
 }
 
 body {
@@ -110,11 +142,30 @@ body {
 }
 
 div.banner {
+  display: flex;
+  flex-direction: column-reverse;
   width: 100%;
+  min-width: 320px;
   height: 100vh;
-  color: #fec2eb;
-  font-family: inconsolata, monospace;
+  padding: 70px 27px 70px 27px;
   background-color: #35283c;
+}
+div.banner div.banner__content {
+  width: 70%;
+  height: auto;
+}
+div.banner div.banner__content h1.title {
+  animation: typing 1s steps(16) forwards;
+}
+div.banner div.banner__content h1.title span.high {
+  display: block;
+  color: #fec2eb;
+  animation: typingTitle 1s 1s steps(13) forwards;
+}
+div.banner div.banner__content span.titleEnd {
+  display: block;
+  font-weight: bold;
+  animation: typing 1s 2s steps(16) forwards;
 }
 
 /* Nesting - here de common styles that the sections have */
@@ -127,7 +178,7 @@ div.banner {
 }
 .section h1.section__head {
   font-family: inconsolata, monospace;
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1;
   font-weight: 400;
 }
@@ -140,8 +191,8 @@ div.banner {
 .section div.section__end::after {
   content: "</" attr(data-text) ">";
   font-family: inconsolata, monospace;
-  font-size: 2rem;
-  line-height: 1rem;
+  font-size: 1.5rem;
+  line-height: 0.8rem;
   font-weight: 400;
 }
 
@@ -180,6 +231,23 @@ section.section.projects div.card {
   section.section.contact div.contact__container {
     display: flex;
     flex-direction: row-reverse;
+  }
+}
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 16ch;
+  }
+}
+@keyframes typingTitle {
+  0% {
+    width: 0;
+    visibility: visible;
+  }
+  100% {
+    width: 13ch;
   }
 }
 

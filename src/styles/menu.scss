@@ -15,26 +15,32 @@ $letter-menu: rgba(255, 255, 255, 0.9);
     height: 60px;
     min-width: 320px;
     max-width: 1400px;
-    padding: 0 1rem;
+    padding: 0 27px;
     transition: all 0.5s linear;
-    // test
-    background-color: rgba(0, 0, 0, 0.705);
+    text-transform: uppercase;
+
 }
 // // // logo // // // //
 #menu div.menu__logo{
-    width:118px;
-    margin-left: 7px;
+    font-size: 8px;
+    letter-spacing: 5px;
     //background-color: rgb(83, 82, 82);
     @extend .centerItems;
-    img{
-        width:100%;
-        height: auto;
+    a{
+        text-decoration: none;
+        color: $letter-menu;
+        span.highLetter{
+            display: inline-block;
+            margin: 0 5px;
+            color: rgba(254, 194, 235, 1);
+        }
     }
+
 }
 
 // // // burger icon // // // //
 #menu div.menu__icon{
-    background-color: rgb(112, 108, 108);
+    //background-color: rgb(112, 108, 108);
     width: 50px;
     @extend .centerItems;
     i#iconOpenMenu{
@@ -56,8 +62,10 @@ $letter-menu: rgba(255, 255, 255, 0.9);
     font-size: 18px;
     text-align: center;
     color:$letter-menu;
+    letter-spacing: 2px;
+    font-weight: 800;
     transition: all 0.3s linear;
-    background-color: rgb(32, 39, 35);
+    background-color: rgba(53, 40, 60, 1);
     i#iconCloseMenu{
         color:$letter-menu;
         align-self: flex-end;
@@ -65,7 +73,7 @@ $letter-menu: rgba(255, 255, 255, 0.9);
 }
 #menu div#menu__container > ul{
     list-style-type: none;
-    margin: 3.5rem 0;
+    margin-top: 100px ;
     cursor: pointer;
     //padding: 10px;
     //background-color: rgba(161, 161, 161, 0.644);
@@ -81,9 +89,11 @@ $letter-menu: rgba(255, 255, 255, 0.9);
 
 
 // // // dynamic class // // // //
-.menuScrollUp{
+.menuScrollDown{
     transform:translateY(-60px) ;
-    background-color: rgba(0, 0, 0, 0.705);
+}
+.animationRotate{
+    animation: rotate 2s 3s ;
 }
 
 // // // // // @ medias // // // // // ///
@@ -113,6 +123,13 @@ $letter-menu: rgba(255, 255, 255, 0.9);
 
 
 }
+// // // /// animations // // // // //
+@keyframes rotate {
+    from{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 
-
-
+}

@@ -1,25 +1,73 @@
 @import './menu.scss';
+
+/// /// ///common styles  /// /// /// ///
+.typingStyles{
+    overflow: hidden;
+    width: 0;
+    white-space: nowrap;
+    letter-spacing: 2px;
+    line-height: 57px;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgba(194, 32, 133, 1);
+    text-transform: uppercase;
+    font-family: inconsolata,monospace;
+    //border: 2px solid white;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-size:11px;
 
+
+html{
+    font-size:10px;
+}
 }
 body{
     font-family:"open sans", sans-serif;
     //background-color: rgba(53, 40, 60, 1);
-    // overflow-x y overflow-y to avoid unwanted scrolling
-    //overflow-x: hidden;
-    //overflow-y: auto;
 }
+
 div.banner{
+    display: flex;
+    flex-direction: column-reverse;
     width: 100%;
+    min-width: 320px;
     height: 100vh;
-    color: rgba(254, 194, 235, 1);
-    font-family: inconsolata,monospace;
+    padding:70px 27px 70px 27px;
     background-color: rgba(53, 40, 60, 1);
+    div.banner__content{
+        width: 70%;
+        height: auto;
+        //background-color: rgba(224, 224, 224, 0.479);
+        //border: 2px solid rgb(8, 8, 8);
+        h1.title{
+            @extend .typingStyles;
+            //background-color: black;
+            animation: typing 1s steps(16) forwards;
+            span.high{
+                @extend .typingStyles;
+                display: block;
+                color: rgba(254, 194, 235, 1);
+                //background-color: rgba(161, 94, 224, 0.637);
+                animation: typingTitle 1s 1s steps(13) forwards;
+            }
+        }
+        span.titleEnd{
+            @extend .typingStyles;
+            display: block;
+            font-weight: bold;
+            //background-color: rgba(10, 10, 10, 0.74);
+            animation: typing 1s  2s steps(16) forwards;
+        }
+    }
 }
+
+
+
+
 /* Nesting - here de common styles that the sections have */
 .section{
     padding: 0 27px;
@@ -28,7 +76,7 @@ div.banner{
     margin: 30px 0;
     h1.section__head{
         font-family: inconsolata,monospace;
-        font-size: 2rem;
+        font-size: 1.5rem;
         line-height: 1;
         font-weight: 400;
     }
@@ -42,8 +90,8 @@ div.banner{
     div.section__end::after{
         content: "</" attr(data-text) ">";
         font-family: inconsolata,monospace;
-        font-size: 2rem;
-        line-height: 1rem;
+        font-size: 1.5rem;
+        line-height: .8rem;
         font-weight: 400;
     }
     /*  end */
@@ -90,3 +138,24 @@ section.section.projects{
     }
 
 }
+
+
+/// ///// animations  ///// ///// ////
+@keyframes typing{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 16ch;
+    }
+}
+@keyframes typingTitle{
+    0%{
+        width: 0;
+        visibility: visible;
+    }
+    100%{
+        width: 13ch;
+    }
+}
+

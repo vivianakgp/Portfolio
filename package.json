@@ -25,5 +25,9 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.3",
     "serve": "^13.0.2"
+  },
+  "dependencies": {
+    "jquery-typewriter": "^1.2.8",
+    "js-type-text": "^2.0.6"
   }
 }
