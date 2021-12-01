@@ -1,4 +1,5 @@
-// // // use de same classes// // //
+@use 'animations';
+// // // Extend/Inheritance// // //
 .centerItems{
     display:grid;
     place-items: center;
@@ -9,15 +10,17 @@ $letter-menu: rgba(255, 255, 255, 0.9);
 #menu{
     position:fixed;
     top: 0;
+    z-index: 100;
     display:flex;
     justify-content: space-between;
     width: 100vw;
     height: 60px;
-    min-width: 320px;
+    min-width: 360px;
     max-width: 1400px;
     padding: 0 27px;
     transition: all 0.5s linear;
     text-transform: uppercase;
+
 
 }
 // // // logo // // // //
@@ -38,7 +41,7 @@ $letter-menu: rgba(255, 255, 255, 0.9);
 
 }
 
-// // // burger icon // // // //
+// // // burger icon // // //
 #menu div.menu__icon{
     //background-color: rgb(112, 108, 108);
     width: 50px;
@@ -48,11 +51,12 @@ $letter-menu: rgba(255, 255, 255, 0.9);
     }
 }
 
-// /// // container menu  // // // //
+// // // container menu  // // //
 #menu div#menu__container {
     position: absolute;
     right:-100%;
     top:0;
+    z-index: 100;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,7 +92,7 @@ $letter-menu: rgba(255, 255, 255, 0.9);
 }
 
 
-// // // dynamic class // // // //
+// // // dynamic class // // //
 .menuScrollDown{
     transform:translateY(-60px) ;
 }
@@ -96,10 +100,13 @@ $letter-menu: rgba(255, 255, 255, 0.9);
     animation: rotate 2s 3s ;
 }
 
-// // // // // @ medias // // // // // ///
+// // // @ medias // // //
 @media only screen and(min-width:1024px){
     #menu div.menu__icon{
         display: none;
+    }
+    #menu div.menu__logo{
+        font-size: 13px;
     }
     #menu div#menu__container{
         left: 0;
@@ -107,6 +114,9 @@ $letter-menu: rgba(255, 255, 255, 0.9);
         flex-direction: row;
         width: auto;
         height: 100%;
+        font-size: 13px;
+        letter-spacing: 5px;
+        font-weight: 400;
         background-color: transparent;
         i#iconCloseMenu{
             display:none;
@@ -123,13 +133,4 @@ $letter-menu: rgba(255, 255, 255, 0.9);
 
 
 }
-// // // /// animations // // // // //
-@keyframes rotate {
-    from{
-        transform: rotate(0);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
 
-}

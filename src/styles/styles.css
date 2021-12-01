@@ -1,3 +1,28 @@
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 16ch;
+  }
+}
+@keyframes typingTitle {
+  0% {
+    width: 0;
+    visibility: visible;
+  }
+  100% {
+    width: 13ch;
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .centerItems, #menu div.menu__icon, #menu div.menu__logo {
   display: grid;
   place-items: center;
@@ -6,11 +31,12 @@
 #menu {
   position: fixed;
   top: 0;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   width: 100vw;
   height: 60px;
-  min-width: 320px;
+  min-width: 360px;
   max-width: 1400px;
   padding: 0 27px;
   transition: all 0.5s linear;
@@ -42,6 +68,7 @@
   position: absolute;
   right: -100%;
   top: 0;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,12 +114,19 @@
     display: none;
   }
 
+  #menu div.menu__logo {
+    font-size: 13px;
+  }
+
   #menu div#menu__container {
     left: 0;
     position: initial;
     flex-direction: row;
     width: auto;
     height: 100%;
+    font-size: 13px;
+    letter-spacing: 5px;
+    font-weight: 400;
     background-color: transparent;
   }
   #menu div#menu__container i#iconCloseMenu {
@@ -107,27 +141,6 @@
     display: inline;
   }
 }
-@keyframes rotate {
-  from {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.typingStyles, div.banner div.banner__content span.titleEnd, div.banner div.banner__content h1.title span.high, div.banner div.banner__content h1.title {
-  overflow: hidden;
-  width: 0;
-  white-space: nowrap;
-  letter-spacing: 2px;
-  line-height: 57px;
-  font-size: 30px;
-  font-weight: bold;
-  color: #c22085;
-  text-transform: uppercase;
-  font-family: inconsolata, monospace;
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -139,56 +152,87 @@
 
 body {
   font-family: "open sans", sans-serif;
+  overflow-x: hidden;
+  background-color: #35283c;
 }
 
 div.banner {
   display: flex;
   flex-direction: column-reverse;
-  width: 100%;
-  min-width: 320px;
+  padding: 0 20px;
+  min-width: 360px;
   height: 100vh;
-  padding: 70px 27px 70px 27px;
   background-color: #35283c;
 }
 div.banner div.banner__content {
-  width: 70%;
-  height: auto;
+  margin-bottom: 60px;
+  background-color: rgba(224, 224, 224, 0.479);
 }
 div.banner div.banner__content h1.title {
+  overflow: hidden;
+  width: 0;
+  display: block;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  line-height: 57px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #c22085;
+  text-transform: uppercase;
+  font-family: inconsolata, monospace;
   animation: typing 1s steps(16) forwards;
 }
 div.banner div.banner__content h1.title span.high {
+  overflow: hidden;
+  width: 0;
   display: block;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  line-height: 57px;
+  font-size: 30px;
+  font-weight: bold;
   color: #fec2eb;
-  animation: typingTitle 1s 1s steps(13) forwards;
+  text-transform: uppercase;
+  font-family: inconsolata, monospace;
+  animation: typingTitle 0.6s 1s steps(13) forwards;
 }
 div.banner div.banner__content span.titleEnd {
+  overflow: hidden;
+  width: 0;
   display: block;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  line-height: 57px;
+  font-size: 30px;
   font-weight: bold;
-  animation: typing 1s 2s steps(16) forwards;
+  color: #c22085;
+  text-transform: uppercase;
+  font-family: inconsolata, monospace;
+  animation: typing 0.6s 1.6s steps(16) forwards;
 }
 
-/* Nesting - here de common styles that the sections have */
 .section {
-  padding: 0 27px;
-  border-bottom: 2px solid black;
-  margin: 30px 0;
-  /* pseudo elements */
-  /*  end */
+  min-width: 360px;
+  padding: 22px 20px;
+  border-top: 2px solid #f12727;
 }
-.section h1.section__head {
+.section div.section__content {
+  background-color: rgba(128, 255, 0, 0.459);
+  /* pseudo elements */
+}
+.section div.section__content h1.section__head {
   font-family: inconsolata, monospace;
-  font-size: 1.5rem;
+  font-size: 21px;
   line-height: 1;
   font-weight: 400;
 }
-.section h1.section__head::before {
+.section div.section__content h1.section__head::before {
   content: "<";
 }
-.section h1.section__head::after {
+.section div.section__content h1.section__head::after {
   content: ">";
 }
-.section div.section__end::after {
+.section div.section__content div.section__end::after {
   content: "</" attr(data-text) ">";
   font-family: inconsolata, monospace;
   font-size: 1.5rem;
@@ -196,58 +240,154 @@ div.banner div.banner__content span.titleEnd {
   font-weight: 400;
 }
 
-/* projects*/
-section.section.projects {
-  background-color: #49374b;
+/*  end */
+section.section.projects div.section__content {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 1rem;
+  gap: 2rem;
+  background-color: transparent;
 }
-section.section.projects h1.section__head {
+section.section.projects div.section__content h1.section__head {
   grid-column: 1/-1;
-  background-color: rgba(255, 235, 205, 0.479);
+  padding: 30px 0;
+  color: #2d9687;
 }
-section.section.projects div.section__end {
+section.section.projects div.section__content div.section__end {
   grid-column: 1/-1;
-  background-color: rgba(255, 235, 205, 0.479);
+  padding: 30px 0;
+  color: #2d9687;
 }
-section.section.projects div.card {
-  padding: 1rem;
-  border: 1px solid white;
+section.section.projects div.section__content div.card {
   grid-column: 1/-1;
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  border: 1px solid #2d9687;
+}
+section.section.projects div.section__content div.card div.card__img {
+  width: 100%;
+  z-index: 50;
+  height: 200px;
+  overflow-y: hidden;
+  border-radius: 10px;
+}
+section.section.projects div.section__content div.card div.card__img img {
+  width: 100%;
+  opacity: 0.8;
+}
+section.section.projects div.section__content div.card h2 {
+  font-family: inconsolata, monospace;
+  font-weight: 400;
+  font-size: 20px;
+  padding: 10px;
+}
+section.section.projects div.section__content div.card p {
+  padding: 10px;
+}
+section.section.projects div.section__content div.card span.card__anchors {
+  padding: 10px;
+}
+section.section.projects div.section__content div.card span.card__anchors a {
+  color: #2d9687;
+  cursor: pointer;
+  margin-right: 24px;
+}
+section.section.projects div.section__content div.card div.card__iconsTech {
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+section.section.projects div.section__content div.card div.card__iconsTech span.icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  background-color: #2d9687;
 }
 
-/* contact */
 .stylesLabel::after {
   content: attr(data-text);
 }
 
-/* @ medias*/
-@media only screen and (min-width: 768px) {
-  section.section.projects div.card {
-    grid-column: span 3;
+footer {
+  padding: 0 20px;
+}
+
+@media only screen and (min-width: 400px) {
+  div.banner {
+    padding: 0 30px;
   }
 
-  section.section.contact div.contact__container {
-    display: flex;
-    flex-direction: row-reverse;
+  section.section {
+    padding: 0;
+  }
+  section.section div.section__content {
+    max-width: 85%;
+    margin: 0 auto;
+  }
+
+  footer {
+    padding: 0;
+    max-width: 85%;
+    margin: 0 auto;
+  }
+
+  section.section.projects div.section__content div.card {
+    padding: 20px;
   }
 }
-@keyframes typing {
-  0% {
-    width: 0;
+@media only screen and (min-width: 600px) {
+  div.banner {
+    padding: 0 80px;
   }
-  100% {
-    width: 16ch;
+
+  section.section div.section__content {
+    max-width: 76%;
+  }
+
+  footer {
+    max-width: 76%;
+  }
+
+  section.section.projects div.section__content div.card div.card__img {
+    height: 250px;
   }
 }
-@keyframes typingTitle {
-  0% {
-    width: 0;
-    visibility: visible;
+@media only screen and (min-width: 768px) {
+  section.section.projects div.section__content div.card:nth-child(even) {
+    grid-column: 1/5;
   }
-  100% {
-    width: 13ch;
+  section.section.projects div.section__content div.card:nth-child(odd) {
+    grid-column: 3/7;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  section.section.projects div.section__content div.card:nth-child(even) {
+    grid-column: 1/4;
+  }
+  section.section.projects div.section__content div.card:nth-child(odd) {
+    grid-column: 4/7;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  section.section.projects div.section__content {
+    gap: 3rem;
+  }
+  section.section.projects div.section__content div.card div.card__img {
+    height: 200px;
+  }
+  section.section.projects div.section__content div.card:nth-child(even) {
+    grid-column: 1/4;
+  }
+  section.section.projects div.section__content div.card:nth-child(odd) {
+    grid-column: 4/7;
   }
 }
 

@@ -1,0 +1,42 @@
+@keyframes typing{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 16ch;
+    }
+}
+@keyframes typingTitle{
+    0%{
+        width: 0;
+        visibility: visible;
+    }
+    100%{
+        width: 13ch;
+    }
+}
+@keyframes rotate{
+    from{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+
+}
+// @keyframes translateRight{
+//     from{
+//         transform:translateX(-110%)
+//     }
+//     to{
+//         transform:translateX(0%)
+//     }
+// }
+// @keyframes translateLeft{
+//     from{
+//         transform:translateX(110%)
+//     }
+//     to{
+//         transform:translateX(0%)
+//     }
+// }

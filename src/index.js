@@ -4,6 +4,7 @@ const ICON_CLOSE_MENU = document.getElementById('iconCloseMenu');
 const CONTAINER_MENU = document.getElementById('menu__container');
 const HIGH_LETTER = document.querySelector('.highLetter');
 // // animation menu letter // //
+
 setTimeout(() => {
   HIGH_LETTER.animate([{ transform: 'rotate(0)' }, { transform: 'rotate(360deg)' }], 1000);
 }, 2000);
