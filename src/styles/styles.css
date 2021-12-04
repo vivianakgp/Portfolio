@@ -146,10 +146,6 @@
   margin: 0;
   box-sizing: border-box;
 }
-* html {
-  font-size: 10px;
-}
-
 body {
   font-family: "open sans", sans-serif;
   overflow-x: hidden;
@@ -166,7 +162,6 @@ div.banner {
 }
 div.banner div.banner__content {
   margin-bottom: 60px;
-  background-color: rgba(224, 224, 224, 0.479);
 }
 div.banner div.banner__content h1.title {
   overflow: hidden;
@@ -214,7 +209,6 @@ div.banner div.banner__content span.titleEnd {
 .section {
   min-width: 360px;
   padding: 22px 20px;
-  border-top: 2px solid #f12727;
 }
 .section div.section__content {
   background-color: rgba(128, 255, 0, 0.459);
@@ -225,6 +219,7 @@ div.banner div.banner__content span.titleEnd {
   font-size: 21px;
   line-height: 1;
   font-weight: 400;
+  padding: 30px 0;
 }
 .section div.section__content h1.section__head::before {
   content: "<";
@@ -233,11 +228,13 @@ div.banner div.banner__content span.titleEnd {
   content: ">";
 }
 .section div.section__content div.section__end::after {
+  display: block;
   content: "</" attr(data-text) ">";
   font-family: inconsolata, monospace;
-  font-size: 1.5rem;
-  line-height: 0.8rem;
+  font-size: 21px;
+  line-height: 1;
   font-weight: 400;
+  padding: 30px 0;
 }
 
 /*  end */
@@ -249,23 +246,23 @@ section.section.projects div.section__content {
 }
 section.section.projects div.section__content h1.section__head {
   grid-column: 1/-1;
-  padding: 30px 0;
-  color: #2d9687;
+  color: #e9b171;
 }
 section.section.projects div.section__content div.section__end {
   grid-column: 1/-1;
-  padding: 30px 0;
-  color: #2d9687;
+  color: #e9b171;
 }
 section.section.projects div.section__content div.card {
   grid-column: 1/-1;
   display: flex;
   flex-direction: column;
   min-height: 500px;
+  max-width: 380px;
   border-radius: 10px;
   padding: 10px;
+  margin: 0 auto;
   color: white;
-  border: 1px solid #2d9687;
+  border: 1.5px solid #e9b171;
 }
 section.section.projects div.section__content div.card div.card__img {
   width: 100%;
@@ -291,7 +288,7 @@ section.section.projects div.section__content div.card span.card__anchors {
   padding: 10px;
 }
 section.section.projects div.section__content div.card span.card__anchors a {
-  color: #2d9687;
+  color: #e9b171;
   cursor: pointer;
   margin-right: 24px;
 }
@@ -309,7 +306,62 @@ section.section.projects div.section__content div.card div.card__iconsTech span.
   justify-content: center;
   align-items: center;
   margin-right: 5px;
-  background-color: #2d9687;
+  background-color: #e9b171;
+}
+
+section.section.about div.section__content {
+  background: transparent;
+}
+section.section.about div.section__content h1.section__head {
+  color: #2d9687;
+}
+section.section.about div.section__content div.section__end {
+  color: #2d9687;
+}
+section.section.about div.section__content div.containerFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 21px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 26px;
+  color: #2d9687;
+}
+section.section.about div.section__content div.containerFlex div.photo {
+  position: relative;
+  width: 350px;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+section.section.about div.section__content div.containerFlex div.photo img {
+  width: 100%;
+  opacity: 0.8;
+}
+section.section.about div.section__content div.containerFlex div.photo i {
+  position: absolute;
+  color: #e9b171;
+  cursor: pointer;
+}
+section.section.about div.section__content div.containerFlex div.photo i:nth-child(2) {
+  top: 25%;
+  right: 27%;
+}
+section.section.about div.section__content div.containerFlex div.photo i:nth-child(3) {
+  top: 22%;
+  right: 13%;
+}
+section.section.about div.section__content div.containerFlex p > span {
+  color: #e9b171;
+  padding: 30px 0;
+  display: block;
+}
+section.section.about div.section__content button {
+  padding: 8px;
+  color: white;
+  font-family: inconsolata, monospace;
+  background-color: transparent;
+  border: 1px solid #2d9687;
 }
 
 .stylesLabel::after {
@@ -356,6 +408,9 @@ footer {
     max-width: 76%;
   }
 
+  section.section.projects {
+    padding: 40px 0;
+  }
   section.section.projects div.section__content div.card div.card__img {
     height: 250px;
   }
@@ -374,6 +429,16 @@ footer {
   }
   section.section.projects div.section__content div.card:nth-child(odd) {
     grid-column: 4/7;
+  }
+
+  section.section.about div.section__content div.containerFlex {
+    flex-direction: row-reverse;
+  }
+  section.section.about div.section__content div.containerFlex div.photo {
+    width: 40%;
+  }
+  section.section.about div.section__content div.containerFlex p {
+    width: 60%;
   }
 }
 @media only screen and (min-width: 1200px) {
