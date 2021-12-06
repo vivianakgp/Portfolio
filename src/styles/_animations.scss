@@ -24,14 +24,14 @@
     }
 
 }
-// @keyframes translateRight{
-//     from{
-//         transform:translateX(-110%)
-//     }
-//     to{
-//         transform:translateX(0%)
-//     }
-// }
+@keyframes floating{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(-10px);;
+    }
+}
 // @keyframes translateLeft{
 //     from{
 //         transform:translateX(110%)

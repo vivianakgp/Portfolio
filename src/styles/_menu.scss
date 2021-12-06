@@ -7,6 +7,13 @@
 }
 // // // var// // // //
 $letter-menu: rgba(255, 255, 255, 0.9);
+// // // dynamic class // // //
+
+.animationRotate {
+    // animation to  word "web"
+    animation: rotate 2s 3s;
+}
+
 #menu{
     position:fixed;
     top: 0;
@@ -17,11 +24,9 @@ $letter-menu: rgba(255, 255, 255, 0.9);
     height: 60px;
     min-width: 360px;
     max-width: 1400px;
-    padding: 0 27px;
+    padding: 0 20px;
     transition: all 0.5s linear;
     text-transform: uppercase;
-
-
 }
 // // // logo // // // //
 #menu div.menu__logo{
@@ -43,32 +48,32 @@ $letter-menu: rgba(255, 255, 255, 0.9);
 
 // // // burger icon // // //
 #menu div.menu__icon{
-    //background-color: rgb(112, 108, 108);
-    width: 50px;
     @extend .centerItems;
     i#iconOpenMenu{
         color:$letter-menu;
+        cursor: pointer;
     }
+
 }
 
 // // // container menu  // // //
 #menu div#menu__container {
-    position: absolute;
-    right:-100%;
+    position: absolute; //es relativo al body
     top:0;
-    z-index: 100;
+    right:-100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
+    z-index: 200;
+    width: 100%;
     height: 100vh;
-    padding: 30px;
+    padding: 40px;
     font-size: 18px;
     text-align: center;
     color:$letter-menu;
     letter-spacing: 2px;
     font-weight: 800;
-    transition: all 0.3s linear;
+    transition: right 0.4s linear;
     background-color: rgba(53, 40, 60, 1);
     i#iconCloseMenu{
         color:$letter-menu;
@@ -84,23 +89,26 @@ $letter-menu: rgba(255, 255, 255, 0.9);
     li{
         margin: 15px 0 ;
         //border: 1px solid white;
+
         a{
             color:inherit;
+            transition: color 1s;
             text-decoration: none;
+
+        }
+        a:hover{
+            color:rgba(254, 194, 235, 1);
         }
     }
 }
 
 
-// // // dynamic class // // //
-.menuScrollDown{
-    transform:translateY(-60px) ;
-}
-.animationRotate{
-    animation: rotate 2s 3s ;
-}
-
 // // // @ medias // // //
+@media only screen and(min-width:600px){
+    #menu{
+        padding: 0 40px;
+    }
+}
 @media only screen and(min-width:1024px){
     #menu div.menu__icon{
         display: none;
@@ -114,6 +122,7 @@ $letter-menu: rgba(255, 255, 255, 0.9);
         flex-direction: row;
         width: auto;
         height: 100%;
+        padding: 0;
         font-size: 13px;
         letter-spacing: 5px;
         font-weight: 400;
@@ -123,9 +132,9 @@ $letter-menu: rgba(255, 255, 255, 0.9);
         }
     }
     #menu div#menu__container > ul{
-        margin:0 1rem;
+        margin: 0;
         li{
-            margin: 0 5px ;
+            margin: 0 7px;
             //border: 1px solid white;
             display:inline;
         }
