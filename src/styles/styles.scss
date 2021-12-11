@@ -1,10 +1,12 @@
 @use 'menu';
 @use 'animations';
+@use 'sec-about';
+@use 'sec-project';
+
 
 // // // var // // //
 $font-Header:inconsolata,monospace;
-$title-sec-project:rgba(194, 32, 133, 1);
-$title-sec-about:rgba(194, 32, 133, 1);
+$titles:rgba(194, 32, 133, 1);
 // rgba(45, 150, 135, 1);
 // rgba(255, 255, 255, 0.9)
 //rgba(254, 194, 235, 1)
@@ -12,10 +14,13 @@ $title-sec-about:rgba(194, 32, 133, 1);
 
 // // // Extend/Inheritance// // //
 // // // dynamic class // // //
+.isActive{
+    color:rgba(194, 32, 133, 1);
+}
 
 
 // // // Mixins // // //
-@mixin titleBanner($title-color: rgba(194, 32, 133, 1)){
+@mixin titleBanner($highlight: #c22085){
     overflow: hidden;
     width: 0;
     display: block;
@@ -24,7 +29,7 @@ $title-sec-about:rgba(194, 32, 133, 1);
     line-height: 57px;
     font-size: 30px;
     font-weight: bold;
-    color: $title-color;
+    color: $highlight;
     text-transform: uppercase;
     font-family: $font-Header;
     //border: 2px solid white;
@@ -38,11 +43,15 @@ $title-sec-about:rgba(194, 32, 133, 1);
 }
 
 body{
-    font-family:"open sans", sans-serif;
     overflow-x: hidden;
-    background-color: rgba(53, 40, 60, 1);
     min-width: 360px;
     max-width: 1400px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    font-family:"open sans", sans-serif;
+    color: white;
+    background-color: rgba(53, 40, 60, 1);
+
 }
 
 div.banner{
@@ -59,7 +68,7 @@ div.banner{
             animation: typing 1s steps(16) forwards;
             //background-color: black;
             span.high{
-                @include titleBanner($title-color: rgba(254, 194, 235, 1));
+                @include titleBanner($highlight: rgba(254, 194, 235, 1));
                 animation: typingTitle .6s 1s steps(13) forwards;
                 //background-color: rgba(161, 94, 224, 0.637);
             }
@@ -75,12 +84,12 @@ div.banner{
 .section{
     padding: 22px 20px;
     div.section__content{
-        background-color: rgba(128, 255, 0, 0.459);
         h1.section__head{
             font-family:$font-Header;
+            color: $titles;
             font-size: 1.3rem;
-            line-height: 1;
-            font-weight: 400;
+            line-height: 2.5;
+            font-weight: 500;
             padding: 30px 0;
 
         }
@@ -95,9 +104,10 @@ div.banner{
             display: block;
             content: "</" attr(data-text) ">";
             font-family: $font-Header;
+            color: $titles;
             font-size: 1.3rem;
-            line-height: 1;
-            font-weight: 400;
+            // line-height: 1;
+            font-weight: 500;
             padding: 30px 0;
 
         }
@@ -106,172 +116,90 @@ div.banner{
 
     /*  end */
 
-// // // projects // // //
-section.section.projects{
-
-    div.section__content{
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 2rem;
-        background-color: transparent;
-        h1.section__head{
-            grid-column: 1/-1;
-            // padding: 30px 0;
-            color: $title-sec-project;
-            //background-color: rgba(255, 235, 205, 0.479);
-        }
-        div.section__end{
-            grid-column: 1/-1;
-            // padding: 30px 0;
-            color: $title-sec-project;
-            //background-color: rgba(255, 235, 205, 0.479);
-        }
-        div.card{
-            grid-column: 1/-1;
-            display: flex;
-            flex-direction: column;
-            min-height: 500px;
-            max-width: 380px;
-            border-radius: 10px;
-            padding: 10px;
-            margin: 0 auto;
-            color:white;
-            border: 1.5px solid $title-sec-project;;
-            //max-width: 450px;
-            // margin: 0 auto;
-            div.card__img{
-                width: 100%;
-                z-index: 50;
-                height: 200px;
-                overflow-y: hidden;
-                border-radius: 10px;
-                img{
-                    width: 100%;
-                    opacity: 0.8;
-                }
-            }
-            h2{
-                font-family:$font-Header;
-                font-weight: 400;
-                font-size: 20px;
-                padding: 10px;
-            }
-            p{
-                padding: 10px;
-            }
-            span.card__anchors{
-                padding: 10px;
-                //background-color: black;
-                a{
-                    //text-decoration: none;
-                    color: rgba(45, 150, 135, 1);
-                    cursor: pointer;
-                    margin-right: 24px;
-                }
-            }
-            div.card__iconsTech{
-                //background-color: black;
-                padding: 30px 0;
-                display: flex;
-                justify-content: center;
-                overflow: hidden;
-                span.icon{
-                    width: 50px;
-                    height: 50px;
-                    border-radius: 50%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin-right: 5px;
-                    background-color:$title-sec-project ;
-                }
-            }
-
-        }
-    }
-}
-// // // about// // //
-section.section.about{
-    div.section__content{
-        background: transparent ;
-        h1.section__head{
-            color:$title-sec-about;
-        }
-        div.section__end{
-            color:$title-sec-about;
-        }
-        div.containerFlex{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: $title-sec-about;
-            div.photo{
-                position: relative;
-                width: 350px;
-                margin-bottom: 40px;
-                margin-top: 40px;
-                padding: 0 40px;
-                //test
-                background-color: rgba(8, 26, 24, 0.623);
-                transform: scale(20%);
-                transition:  transform 0.6s ease-in;
-                img{
-                    width: 100%;
-                }
-                i{
-                    position: absolute;
-                    color:rgba(255, 255, 255, 0.9);
-                    cursor: pointer;
-                    animation: floating 3s alternate infinite;
-                    transition: color 1s;
-
-                }
-                i:nth-child(2){
-                    top: 29%;
-                    right: 27%;
-                }
-                i:nth-child(3){
-                    top: 22%;
-                    right: 15%;
-
-                }
-                i:hover{
-                    color: rgba(45, 150, 135, 1);
-                }
-            }
-            p{
-                font-size: 1.3rem;
-                font-style: italic;
-                font-weight: 300;
-                line-height: 26px;
-                color:rgba(255, 255, 255, 0.9);
-            }
-            p > span {
-                color: rgba(254, 194, 235, 1);
-                padding: 30px 0;
-                display: block;
-            }
-        }
-        button{
-            padding: 8px;
-            color: white;
-            font-family: $font-Header;
-            background-color: transparent;
-            border: 1px solid $title-sec-about;
-        }
-    }
-}
-
 // // // contact // // //
-// none en label
-.stylesLabel::after{
-    //display: inline-block;
-    content: attr(data-text);
-    //pointer-events: none;
+section.section.contact{
+    .section__content{
+        //background-color: rgba(8, 26, 24, 0.623);
+
+        > p:nth-child(2){
+            font-family: open sans;
+            font-style: italic;
+            font-weight: 200;
+            font-size: 1.3rem;
+            margin-bottom: 50px;
+
+            span.email{
+                //border-bottom: 1px solid rgba(45, 150, 135, 1);
+                color:rgba(45, 150, 135, 1);
+            }
+        }
+        form.contact__form{
+            margin-top: 2rem;
+            font-family: $font-Header;
+
+            label{
+                display: none;
+            }
+            input[type=email], input[type=text], textarea {
+                width: 100%;
+                min-height: 50px;
+                padding-left: 90;
+                padding-left: 90px;
+                font-family: inherit;
+                color: rgba(254, 194, 235, 1);
+                font-size: 1.3rem;
+                background: none;
+                background: transparent;
+                outline: none;
+                border: none;
+                -webkit-appearance: none;
+                border-bottom: 1px solid rgba(194, 32, 133, 1);
+                //background-color: rgba(10, 10, 10, 0.712);
+
+            }
+            textarea{
+                min-height: 100px;
+
+            }
+
+            span.stylesLabel{
+                position: relative;
+                left: 5px;
+                top: -35px;
+                display: inline-block
+
+            }
+            textarea+span[data-text="Message"]{
+                top:-90px;
+            }
+            .stylesLabel::after{
+            content: attr(data-text);
+            }
+            input[type="Submit"]{
+                padding: 8px 25px;
+                font-family: $font-Header;
+                color: white;
+                background-color: transparent;
+                border: 1px solid $titles;
+                // transform: all 1s;
+
+            }
+            input[type="Submit"]:hover{
+                border: 1.5px solid rgba(45, 150, 135, 1);
+                transition: border 1s;
+            }
+        }
+    }
 }
+
 // // // footer // // //
 footer{
     padding: 0 20px;
+    color:rgba(254, 194, 235, 1);
+    span > i{
+        color: rgba(194, 32, 133, 1);
+
+    }
 }
 // // // @ medias // // //
 @media only screen and(min-width:400px){
@@ -396,22 +324,3 @@ footer{
         }
     }
 }
-
-// section.section.about{
-//     div.section__content{
-//         background: transparent ;
-//         h1.section__head{
-//             color:$title-sec-about;
-//         }
-//         div.section__end{
-//             color:$title-sec-about;
-//         }
-//         div.containerFlex{
-//             display: flex;
-//             flex-direction: column;
-//             align-items: center;
-//             font-size: 1.3rem;
-//             font-style: italic;
-//             font-weight: 300;
-//             line-height: 26px;
-//             color: $title-sec-about;

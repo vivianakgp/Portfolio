@@ -100,11 +100,11 @@
 
 #menu div#menu__container > ul {
   list-style-type: none;
-  margin-top: 100px;
+  margin-top: 180px;
   cursor: pointer;
 }
 #menu div#menu__container > ul li {
-  margin: 15px 0;
+  margin: 38px 0;
 }
 #menu div#menu__container > ul li a {
   color: inherit;
@@ -153,6 +153,135 @@
     display: inline;
   }
 }
+section.section.about div.section__content div.containerFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section.section.about div.section__content div.containerFlex div.photo {
+  position: relative;
+  width: 350px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  padding: 0 40px;
+  transform: scale(20%);
+  transition: transform 0.6s ease-in;
+}
+section.section.about div.section__content div.containerFlex div.photo img {
+  width: 100%;
+}
+section.section.about div.section__content div.containerFlex div.photo i {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  animation: floating 3s alternate infinite;
+  transition: color 1s;
+}
+section.section.about div.section__content div.containerFlex div.photo i:nth-child(2) {
+  top: 29%;
+  right: 27%;
+}
+section.section.about div.section__content div.containerFlex div.photo i:nth-child(3) {
+  top: 22%;
+  right: 15%;
+}
+section.section.about div.section__content div.containerFlex div.photo i:hover {
+  color: #2d9687;
+}
+section.section.about div.section__content div.containerFlex p {
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 300;
+}
+section.section.about div.section__content div.containerFlex p > span {
+  color: #fec2eb;
+  padding: 30px 0;
+  display: block;
+}
+section.section.about div.section__content button {
+  padding: 8px;
+  font-family: inconsolata, monospace;
+  color: white;
+  background-color: transparent;
+  border: 1px solid #c22085;
+}
+section.section.about div.section__content button:hover {
+  border: 1.5px solid #2d9687;
+  transition: border 1s;
+}
+
+section.section.projects div.section__content {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2rem;
+}
+section.section.projects div.section__content h1.section__head {
+  grid-column: 1/-1;
+}
+section.section.projects div.section__content div.section__end {
+  grid-column: 1/-1;
+}
+section.section.projects div.section__content div.card {
+  grid-column: 1/-1;
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+  max-width: 380px;
+  line-height: 1.8;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 auto;
+  border: 1.5px solid #c22085;
+}
+section.section.projects div.section__content div.card div.card__img {
+  width: 100%;
+  z-index: 50;
+  height: 200px;
+  overflow-y: hidden;
+  border-radius: 10px;
+}
+section.section.projects div.section__content div.card div.card__img img {
+  width: 100%;
+  opacity: 0.8;
+}
+section.section.projects div.section__content div.card h2 {
+  font-family: inconsolata, monospace;
+  font-weight: 400;
+  font-size: 20px;
+  padding: 10px;
+}
+section.section.projects div.section__content div.card p {
+  padding: 10px;
+}
+section.section.projects div.section__content div.card span.card__anchors {
+  padding: 10px;
+}
+section.section.projects div.section__content div.card span.card__anchors a {
+  color: #2d9687;
+  cursor: pointer;
+  margin-right: 24px;
+}
+section.section.projects div.section__content div.card div.card__iconsTech {
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+section.section.projects div.section__content div.card div.card__iconsTech span.icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  background-color: #c22085;
+}
+
+.isActive {
+  color: #c22085;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -160,11 +289,14 @@
 }
 
 body {
-  font-family: "open sans", sans-serif;
   overflow-x: hidden;
-  background-color: #35283c;
   min-width: 360px;
   max-width: 1400px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-family: "open sans", sans-serif;
+  color: white;
+  background-color: #35283c;
 }
 
 div.banner {
@@ -223,14 +355,14 @@ div.banner div.banner__content span.titleEnd {
   padding: 22px 20px;
 }
 .section div.section__content {
-  background-color: rgba(128, 255, 0, 0.459);
   /* pseudo elements */
 }
 .section div.section__content h1.section__head {
   font-family: inconsolata, monospace;
+  color: #c22085;
   font-size: 1.3rem;
-  line-height: 1;
-  font-weight: 400;
+  line-height: 2.5;
+  font-weight: 500;
   padding: 30px 0;
 }
 .section div.section__content h1.section__head::before {
@@ -243,156 +375,78 @@ div.banner div.banner__content span.titleEnd {
   display: block;
   content: "</" attr(data-text) ">";
   font-family: inconsolata, monospace;
+  color: #c22085;
   font-size: 1.3rem;
-  line-height: 1;
-  font-weight: 400;
+  font-weight: 500;
   padding: 30px 0;
 }
 
 /*  end */
-section.section.projects div.section__content {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 2rem;
-  background-color: transparent;
-}
-section.section.projects div.section__content h1.section__head {
-  grid-column: 1/-1;
-  color: #c22085;
-}
-section.section.projects div.section__content div.section__end {
-  grid-column: 1/-1;
-  color: #c22085;
-}
-section.section.projects div.section__content div.card {
-  grid-column: 1/-1;
-  display: flex;
-  flex-direction: column;
-  min-height: 500px;
-  max-width: 380px;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 0 auto;
-  color: white;
-  border: 1.5px solid #c22085;
-}
-section.section.projects div.section__content div.card div.card__img {
-  width: 100%;
-  z-index: 50;
-  height: 200px;
-  overflow-y: hidden;
-  border-radius: 10px;
-}
-section.section.projects div.section__content div.card div.card__img img {
-  width: 100%;
-  opacity: 0.8;
-}
-section.section.projects div.section__content div.card h2 {
-  font-family: inconsolata, monospace;
-  font-weight: 400;
-  font-size: 20px;
-  padding: 10px;
-}
-section.section.projects div.section__content div.card p {
-  padding: 10px;
-}
-section.section.projects div.section__content div.card span.card__anchors {
-  padding: 10px;
-}
-section.section.projects div.section__content div.card span.card__anchors a {
-  color: #2d9687;
-  cursor: pointer;
-  margin-right: 24px;
-}
-section.section.projects div.section__content div.card div.card__iconsTech {
-  padding: 30px 0;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-}
-section.section.projects div.section__content div.card div.card__iconsTech span.icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 5px;
-  background-color: #c22085;
-}
-
-section.section.about div.section__content {
-  background: transparent;
-}
-section.section.about div.section__content h1.section__head {
-  color: #c22085;
-}
-section.section.about div.section__content div.section__end {
-  color: #c22085;
-}
-section.section.about div.section__content div.containerFlex {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #c22085;
-}
-section.section.about div.section__content div.containerFlex div.photo {
-  position: relative;
-  width: 350px;
-  margin-bottom: 40px;
-  margin-top: 40px;
-  padding: 0 40px;
-  background-color: rgba(8, 26, 24, 0.623);
-  transform: scale(20%);
-  transition: transform 0.6s ease-in;
-}
-section.section.about div.section__content div.containerFlex div.photo img {
-  width: 100%;
-}
-section.section.about div.section__content div.containerFlex div.photo i {
-  position: absolute;
-  color: rgba(255, 255, 255, 0.9);
-  cursor: pointer;
-  animation: floating 3s alternate infinite;
-  transition: color 1s;
-}
-section.section.about div.section__content div.containerFlex div.photo i:nth-child(2) {
-  top: 29%;
-  right: 27%;
-}
-section.section.about div.section__content div.containerFlex div.photo i:nth-child(3) {
-  top: 22%;
-  right: 15%;
-}
-section.section.about div.section__content div.containerFlex div.photo i:hover {
-  color: #2d9687;
-}
-section.section.about div.section__content div.containerFlex p {
-  font-size: 1.3rem;
+section.section.contact .section__content > p:nth-child(2) {
+  font-family: open sans;
   font-style: italic;
-  font-weight: 300;
-  line-height: 26px;
-  color: rgba(255, 255, 255, 0.9);
+  font-weight: 200;
+  font-size: 1.3rem;
+  margin-bottom: 50px;
 }
-section.section.about div.section__content div.containerFlex p > span {
-  color: #fec2eb;
-  padding: 30px 0;
-  display: block;
+section.section.contact .section__content > p:nth-child(2) span.email {
+  color: #2d9687;
 }
-section.section.about div.section__content button {
-  padding: 8px;
-  color: white;
+section.section.contact .section__content form.contact__form {
+  margin-top: 2rem;
   font-family: inconsolata, monospace;
+}
+section.section.contact .section__content form.contact__form label {
+  display: none;
+}
+section.section.contact .section__content form.contact__form input[type=email], section.section.contact .section__content form.contact__form input[type=text], section.section.contact .section__content form.contact__form textarea {
+  width: 100%;
+  min-height: 50px;
+  padding-left: 90;
+  padding-left: 90px;
+  font-family: inherit;
+  color: #fec2eb;
+  font-size: 1.3rem;
+  background: none;
+  background: transparent;
+  outline: none;
+  border: none;
+  -webkit-appearance: none;
+  border-bottom: 1px solid #c22085;
+}
+section.section.contact .section__content form.contact__form textarea {
+  min-height: 100px;
+}
+section.section.contact .section__content form.contact__form span.stylesLabel {
+  position: relative;
+  left: 5px;
+  top: -35px;
+  display: inline-block;
+}
+section.section.contact .section__content form.contact__form textarea + span[data-text=Message] {
+  top: -90px;
+}
+section.section.contact .section__content form.contact__form .stylesLabel::after {
+  content: attr(data-text);
+}
+section.section.contact .section__content form.contact__form input[type=Submit] {
+  padding: 8px 25px;
+  font-family: inconsolata, monospace;
+  color: white;
   background-color: transparent;
   border: 1px solid #c22085;
 }
-
-.stylesLabel::after {
-  content: attr(data-text);
+section.section.contact .section__content form.contact__form input[type=Submit]:hover {
+  border: 1.5px solid #2d9687;
+  transition: border 1s;
 }
 
 footer {
   padding: 0 20px;
+  color: #fec2eb;
+}
+footer span > i {
+  color: #c22085;
 }
 
 @media only screen and (min-width: 400px) {

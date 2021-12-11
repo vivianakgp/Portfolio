@@ -3,6 +3,10 @@ const MENU = document.getElementById('menu');
 const CONTAINER_MENU = document.getElementById('menu__container');
 const HIGH_LETTER = document.querySelector('.highLetter');
 const PHOTO = document.querySelector('.photo');
+const FORM = document.getElementById('contactForm');
+const SPAN_NAME = document.querySelector('span[data-text="Name"]');
+const SPAN_EMAIL = document.querySelector('span[data-text="Email"]');
+const SPAN_MESSAGE = document.querySelector('span[data-text="Message"]');
 
 // Event click burger menu
 MENU.addEventListener('click', (event) => {
@@ -43,6 +47,7 @@ function showAndHiddenMenu() {
 document.addEventListener('scroll', showAndHiddenMenu);// window or document? no differences
 
 // //  end controller menu // //
+
 // // intersection observer // //
 const OBSERVER = new IntersectionObserver((entries) => {
   const entry = entries[0];
@@ -55,3 +60,29 @@ const OBSERVER = new IntersectionObserver((entries) => {
 OBSERVER.observe(PHOTO);
 // OBSERVER.unobserve(PHOTO);
 // OBSERVER.disconnect();
+// // // form // // //
+
+FORM.addEventListener('click', (e) => {
+  if (e.target.id === 'name') {
+    if (SPAN_EMAIL.classList.contains('isActive') || SPAN_MESSAGE.classList.contains('isActive')) {
+      SPAN_EMAIL.classList.remove('isActive');
+      SPAN_MESSAGE.classList.remove('isActive');
+    }
+    SPAN_NAME.classList.add('isActive');
+  }
+  if (e.target.id === 'email') {
+    if (SPAN_NAME.classList.contains('isActive') || SPAN_MESSAGE.classList.contains('isActive')) {
+      SPAN_NAME.classList.remove('isActive');
+      SPAN_MESSAGE.classList.remove('isActive');
+    }
+    SPAN_EMAIL.classList.add('isActive');
+  }
+  if (e.target.id === 'message') {
+    if (SPAN_NAME.classList.contains('isActive') || SPAN_EMAIL.classList.contains('isActive')) {
+      SPAN_NAME.classList.remove('isActive');
+      SPAN_EMAIL.classList.remove('isActive');
+    }
+    SPAN_MESSAGE.classList.add('isActive');
+  }
+});
+
