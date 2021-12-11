@@ -7,7 +7,7 @@ const FORM = document.getElementById('contactForm');
 const SPAN_NAME = document.querySelector('span[data-text="Name"]');
 const SPAN_EMAIL = document.querySelector('span[data-text="Email"]');
 const SPAN_MESSAGE = document.querySelector('span[data-text="Message"]');
-
+const ANCHOR = document.getElementById('test');
 // Event click burger menu
 MENU.addEventListener('click', (event) => {
   // console.log(event.target);
@@ -86,3 +86,7 @@ FORM.addEventListener('click', (e) => {
   }
 });
 
+// mnu burger click anchor
+ANCHOR.addEventListener('click', (e) => {
+  console.log(e);
+});
