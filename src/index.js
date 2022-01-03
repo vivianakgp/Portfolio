@@ -7,16 +7,17 @@ const FORM = document.getElementById('contactForm');
 const SPAN_NAME = document.querySelector('span[data-text="Name"]');
 const SPAN_EMAIL = document.querySelector('span[data-text="Email"]');
 const SPAN_MESSAGE = document.querySelector('span[data-text="Message"]');
-const ANCHOR = document.getElementById('test');
-// Event click burger menu
+
+// Event click all menu
 MENU.addEventListener('click', (event) => {
   // console.log(event.target);
   if (event.target.id === 'iconOpenMenu') {
+    CONTAINER_MENU.style.display = 'flex';
     CONTAINER_MENU.style.right = '0';
-    BODY.style.overflow = 'hidden';
+    BODY.style.overflowY = 'hidden';
   } else if (event.target.id === 'iconCloseMenu') {
     CONTAINER_MENU.style.right = '-100%';
-    BODY.style.overflow = 'scroll';
+    BODY.style.overflowY = 'scroll';
   }
 });
 // // animation menu letter // //
@@ -61,7 +62,6 @@ OBSERVER.observe(PHOTO);
 // OBSERVER.unobserve(PHOTO);
 // OBSERVER.disconnect();
 // // // form // // //
-
 FORM.addEventListener('click', (e) => {
   if (e.target.id === 'name') {
     if (SPAN_EMAIL.classList.contains('isActive') || SPAN_MESSAGE.classList.contains('isActive')) {
@@ -86,7 +86,4 @@ FORM.addEventListener('click', (e) => {
   }
 });
 
-// mnu burger click anchor
-ANCHOR.addEventListener('click', (e) => {
-  console.log(e);
-});
+
