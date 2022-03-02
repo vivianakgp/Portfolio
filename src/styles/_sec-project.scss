@@ -48,6 +48,10 @@ section.section.projects{
             p{
                 padding: 10px;
             }
+            ul{
+                padding: 20px;
+
+            }
             span.card__anchors{
                 padding: 10px;
                 //background-color: black;
@@ -58,7 +62,7 @@ section.section.projects{
                     margin-right: 24px;
                 }
             }
-            div.card__iconsTech{
+/*             div.card__iconsTech{
                 //background-color: black;
                 padding: 30px 0;
                 display: flex;
@@ -74,7 +78,7 @@ section.section.projects{
                     margin-right: 5px;
                     background-color:$titles ;
                 }
-            }
+            } */
 
         }
     }

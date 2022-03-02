@@ -32,8 +32,10 @@
   }
 }
 .centerItems, #menu div.menu__icon, #menu div.menu__logo {
-  display: grid;
-  place-items: center;
+  /*     display:grid;
+      place-items: center; */
+  justify-content: center;
+  align-items: center;
 }
 
 .animationRotate {
@@ -56,6 +58,7 @@
 }
 
 #menu div.menu__logo {
+  display: flex;
   font-size: 8px;
   letter-spacing: 5px;
 }
@@ -69,6 +72,9 @@
   color: #fec2eb;
 }
 
+#menu div.menu__icon {
+  display: flex;
+}
 #menu div.menu__icon i#iconOpenMenu {
   color: rgba(255, 255, 255, 0.9);
   cursor: pointer;
@@ -78,33 +84,33 @@
   position: absolute;
   top: 0px;
   right: -100%;
-  flex-direction: column;
+  display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
   height: 100vh;
   font-size: 18px;
   text-align: center;
   color: rgba(255, 255, 255, 0.9);
   letter-spacing: 2px;
-  font-weight: 800;
+  font-weight: 500;
   transition: all 0.4s linear;
   background-color: #35283c;
 }
 #menu div#menu__container i#iconCloseMenu {
   color: rgba(255, 255, 255, 0.9);
-  margin-top: 35px;
-  margin-right: 35px;
-  align-self: flex-end;
+  position: absolute;
+  top: 40px;
+  right: 40px;
 }
 
 #menu div#menu__container > ul {
   list-style-type: none;
-  margin-top: 180px;
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   cursor: pointer;
-}
-#menu div#menu__container > ul li {
-  margin: 38px 0;
 }
 #menu div#menu__container > ul li a {
   color: inherit;
@@ -132,22 +138,20 @@
   #menu div#menu__container {
     left: 0;
     position: initial;
-    flex-direction: row;
     width: auto;
     height: 100%;
-    padding: 0;
-    font-size: 13px;
+    font-size: 14px;
     letter-spacing: 5px;
     font-weight: 400;
     background-color: transparent;
   }
   #menu div#menu__container i#iconCloseMenu {
     display: none;
-    align-self: flex-end;
   }
 
   #menu div#menu__container > ul {
-    margin: 0;
+    flex-direction: row;
+    margin-top: 10px;
   }
   #menu div#menu__container > ul li {
     margin: 0 7px;
@@ -234,6 +238,23 @@ section.section.projects div.section__content div.card {
   padding: 10px;
   margin: 0 auto;
   border: 1.5px solid #c22085;
+  /*             div.card__iconsTech{
+                  //background-color: black;
+                  padding: 30px 0;
+                  display: flex;
+                  justify-content: center;
+                  overflow: hidden;
+                  span.icon{
+                      width: 50px;
+                      height: 50px;
+                      border-radius: 50%;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      margin-right: 5px;
+                      background-color:$titles ;
+                  }
+              } */
 }
 section.section.projects div.section__content div.card div.card__img {
   width: 100%;
@@ -255,6 +276,9 @@ section.section.projects div.section__content div.card h2 {
 section.section.projects div.section__content div.card p {
   padding: 10px;
 }
+section.section.projects div.section__content div.card ul {
+  padding: 20px;
+}
 section.section.projects div.section__content div.card span.card__anchors {
   padding: 10px;
 }
@@ -262,22 +286,6 @@ section.section.projects div.section__content div.card span.card__anchors a {
   color: #2d9687;
   cursor: pointer;
   margin-right: 24px;
-}
-section.section.projects div.section__content div.card div.card__iconsTech {
-  padding: 30px 0;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-}
-section.section.projects div.section__content div.card div.card__iconsTech span.icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 5px;
-  background-color: #c22085;
 }
 
 .isActive {
