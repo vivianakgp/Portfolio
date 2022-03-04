@@ -223,9 +223,11 @@ section.section.projects div.section__content {
 }
 section.section.projects div.section__content h1.section__head {
   grid-column: 1/-1;
+  color: #fec2eb;
 }
 section.section.projects div.section__content div.section__end {
   grid-column: 1/-1;
+  color: #fec2eb;
 }
 section.section.projects div.section__content div.card {
   grid-column: 1/-1;
@@ -368,7 +370,7 @@ div.banner div.banner__content span.titleEnd {
 }
 .section div.section__content h1.section__head {
   font-family: inconsolata, monospace;
-  color: #c22085;
+  /* color: $titles; */
   font-size: 1.3rem;
   line-height: 2.5;
   font-weight: 500;
@@ -384,7 +386,7 @@ div.banner div.banner__content span.titleEnd {
   display: block;
   content: "</" attr(data-text) ">";
   font-family: inconsolata, monospace;
-  color: #c22085;
+  /* color: $titles; */
   font-size: 1.3rem;
   font-weight: 500;
   padding: 30px 0;

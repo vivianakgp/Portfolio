@@ -1,6 +1,6 @@
 // // // var // // //
 $font-Header:inconsolata,monospace;
-$titles:rgba(194, 32, 133, 1);
+$titles:rgba(254, 194, 235, 1);
 // // // projects // // //
 section.section.projects{
     div.section__content{
@@ -9,10 +9,12 @@ section.section.projects{
         gap: 2rem;
         h1.section__head{
             grid-column: 1/-1;
+            color:$titles;
             //background-color: rgba(255, 235, 205, 0.479);
         }
         div.section__end{
             grid-column: 1/-1;
+            color:$titles;
             //background-color: rgba(255, 235, 205, 0.479);
         }
         div.card{
@@ -25,7 +27,7 @@ section.section.projects{
             border-radius: 10px;
             padding: 10px;
             margin: 0 auto;
-            border: 1.5px solid $titles;;
+            border: 1.5px solid rgba(194, 32, 133, 1) ;
             //max-width: 450px;
             // margin: 0 auto;
             div.card__img{

@@ -85,7 +85,7 @@ div.banner{
     div.section__content{
         h1.section__head{
             font-family:$font-Header;
-            color: $titles;
+            /* color: $titles; */
             font-size: 1.3rem;
             line-height: 2.5;
             font-weight: 500;
@@ -103,7 +103,7 @@ div.banner{
             display: block;
             content: "</" attr(data-text) ">";
             font-family: $font-Header;
-            color: $titles;
+            /* color: $titles; */
             font-size: 1.3rem;
             // line-height: 1;
             font-weight: 500;
