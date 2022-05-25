@@ -52,6 +52,7 @@
                     <ul>
                         <li>Vanilla Js</li>
                         <li>Single Page Application(SPA)</li>
+                        <li>MVC Model</li>
                         <li>Bootstrap</li>
                         <li>Firebase</li>
                     </ul>
@@ -89,7 +90,8 @@
                     <h2>Rick and Morty</h2>
                     <p>Rick and Morty wikipedia filters Characters by locality name and
                         Shows photograph, living or dead status, origin, and the number
-                        of episodes that appear of each residents.</p>
+                        of episodes that appear of each residents.
+                    </p>
                     <ul>
                         <li>React js</li>
                         <li>React Hooks</li>
@@ -103,20 +105,45 @@
                     </span>
                 </div>
                 <!-- card 4 -->
-                <!-- <div class="card">
-                    <div class="card__img"><img src="https://w.wallhaven.cc/full/z8/wallhaven-z8dg9y.png"> </div>
-                    <h2>Social Network</h2>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates sint dolores eveniet iusto id quisquam dolor.</p>
+                <div class="card">
+                    <div class="card__img"><img src="./src/assets/image/Pokedex.jpeg"> </div>
+                    <h2>Pokedex</h2>
+                    <p>Pokedex shows a list of cards  with more than 1000 pokemon with images and basic description.
+                        Pokemon card has a route of detail page path, here each one is described in more detail.
+                        You can also search a pokemon by name or filter them by pokemon type.
+                    </p>
+                    <ul>
+                        <li>React js</li>
+                        <li>React router</li>
+                        <li>React Hooks</li>
+                        <li>Redux</li>
+                        <li>Pokeapi</li>
+                        <li>Sass</li>
+                        <li>Responsive web design</li>
+                    </ul>
                     <span class="card__anchors">
-                        <a href="#">repo</a>
-                        <a href="#">demo</a>
+                        <a target="_blank" href="https://github.com/vivianakgp/Pokemondex">Repository</a>
+                        <a target="_blank" href="https://pokemonsdex.netlify.app/">Deploy</a>
                     </span>
-                    <div class="card__iconsTech">
-                        <span class="icon"><i class="fab fa-html5 fa-2x"></i></span>
-                        <span class="icon"><i class="fab fa-html5 fa-2x"></i></i></span>
-                        <span class="icon"><i class="fab fa-js-square fa-2x"></i></span>
-                        <span class="icon"><i class="fab fa-github fa-2x"></i></i></span>
-                    </div>
+                </div>
+                <!-- card 5 -->
+                <!-- <div class="card">
+                    <div class="card__img"><img src=""> </div>
+                    <h2>Ecommerce</h2>
+                    <p></p>
+                    <ul>
+                        <li>React js</li>
+                        <li>React router</li>
+                        <li>React Hooks</li>
+                        <li>Redux</li>
+                        <li>Pokeapi</li>
+                        <li>Sass</li>
+                        <li>Responsive web design</li>
+                    </ul>
+                    <span class="card__anchors">
+                        <a target="_blank" href="">Repository</a>
+                        <a target="_blank" href="">Deploy</a>
+                    </span>
                 </div> -->
                 <!-- end section -->
                 <div class="section__end" data-text="projects"></div>
@@ -137,7 +164,7 @@
                         <span>My love for learning led me to the tech world where I found my passion for programming, I am focused on perfecting my skills and always continue to learn. </span>
                     </p>
                 </div>
-                <button>Curriculum vitae (pdf)</button>
+                <button id="btnDownload">Curriculum vitae (pdf)</button>
                 <!-- end section -->
                 <div class="section__end" data-text="about"></div>
             </div>
@@ -147,10 +174,15 @@
                 <h1 class="section__head">contact</h1>
                 <p>Feel free to send an e-mail on <span class="email">vivianakgp@gmail.com</span></p>
                 <p>Alternatively, you can also drop-in a mail here!</p>
-                <form id="contactForm" class="contact__form">
+                <form 
+                    action="https://formsubmit.co/b9e63fd88baedb7f10b1245db4e13c4d" 
+                    method="POST"
+                    id="contactForm" class="contact__form"
+                >
                     <p>
                         <label for="name">Name</label>
-                        <input id="name" name="name" type="text" autocorrect="off" autocapitalize="on" required pattern=".{3}">
+                        <!--pattern=".{3}"-->
+                        <input id="name" name="name" type="text" autocorrect="off" autocapitalize="on" required >
                         <span class="stylesLabel" data-text="Name"></span>
                     </p>
                     <p>
@@ -166,6 +198,9 @@
                     <p>
                         <input type="Submit" value="Send" title="Submit">
                     </p>
+                    <input type="hidden" name="_next" value="http://localhost:3000/">
+                    <input type="hidden" name="_captcha" value="false">
+
                 </form>
                 <!-- <div class="contact__socialNetwork">
                     <i class="fab fa-github"></i>
