@@ -116,5 +116,5 @@ const downloadPdf = (path, fileName) => {
 };
 // add event click to btn download pdf
 BTN_DOWNLOAD.addEventListener("click", () => {
-  downloadPdf("./src/assets/cv2022.pdf", "downloadFile");
+  downloadPdf("./src/assets/vivianaCV2022.pdf", "VivianaCV");
 });

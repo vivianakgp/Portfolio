@@ -15,7 +15,7 @@ $titles:rgba(194, 32, 133, 1);
 // // // Extend/Inheritance// // //
 // // // dynamic class // // //
 .isActive{
-    color:rgba(194, 32, 133, 1);
+    color:#c22085;
 }
 
 
@@ -49,7 +49,7 @@ body{
     line-height: 1.6;
     font-family:"open sans", sans-serif;
     color: white;
-    background-color: rgba(53, 40, 60, 1);
+    background-color: #35283c;
 
 }
 
@@ -67,7 +67,7 @@ div.banner{
             animation: typing 1s steps(16) forwards;
             //background-color: black;
             span.high{
-                @include titleBanner($highlight: rgba(254, 194, 235, 1));
+                @include titleBanner($highlight: #fec3eb);
                 animation: typingTitle .6s 1s steps(13) forwards;
                 //background-color: rgba(161, 94, 224, 0.637);
             }
@@ -129,7 +129,7 @@ section.section.contact{
 
             span.email{
                 //border-bottom: 1px solid rgba(45, 150, 135, 1);
-                color:rgba(45, 150, 135, 1);
+                color:#2d9687;
             }
         }
         form.contact__form{
