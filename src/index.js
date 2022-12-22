@@ -57,7 +57,7 @@ document.addEventListener("scroll", showAndHiddenMenu); // window or document? n
 const OBSERVER = new IntersectionObserver(
   (entries) => {
     const entry = entries[0];
-    console.log(entry);
+    // console.log(entry);
     if (entry.intersectionRatio >= 0.25) {
       entry.target.animate([
         { transform: "scale(20%)" },
@@ -118,3 +118,6 @@ const downloadPdf = (path, fileName) => {
 BTN_DOWNLOAD.addEventListener("click", () => {
   downloadPdf("./src/assets/vivianaCV2022.pdf", "VivianaCV");
 });
+
+// clear submit
+const testSubmit = () => {};
