@@ -33,7 +33,7 @@
 }
 .centerItems, #menu div.menu__icon, #menu div.menu__logo {
   /*     display:grid;
-      place-items: center; */
+    place-items: center; */
   justify-content: center;
   align-items: center;
 }
@@ -69,7 +69,7 @@
 #menu div.menu__logo a span.highLetter {
   display: inline-block;
   margin: 0 5px;
-  color: #fec2eb;
+  color: rgb(254, 194, 235);
 }
 
 #menu div.menu__icon {
@@ -80,7 +80,7 @@
   cursor: pointer;
 }
 
-#menu div#menu__container {
+#menu div#menu__containerMobile {
   position: absolute;
   top: 0px;
   right: -100%;
@@ -95,16 +95,16 @@
   letter-spacing: 2px;
   font-weight: 500;
   transition: all 0.4s linear;
-  background-color: #35283c;
+  background-color: rgb(53, 40, 60);
 }
-#menu div#menu__container i#iconCloseMenu {
+#menu div#menu__containerMobile i#iconCloseMenu {
   color: rgba(255, 255, 255, 0.9);
   position: absolute;
   top: 40px;
   right: 40px;
 }
 
-#menu div#menu__container > ul {
+#menu div#menu__containerMobile > ul {
   list-style-type: none;
   height: 35%;
   display: flex;
@@ -112,13 +112,42 @@
   justify-content: space-around;
   cursor: pointer;
 }
-#menu div#menu__container > ul li a {
+#menu div#menu__containerMobile > ul li a {
   color: inherit;
   transition: color 1s;
   text-decoration: none;
 }
-#menu div#menu__container > ul li a:hover {
-  color: #fec2eb;
+#menu div#menu__containerMobile > ul li a:hover {
+  color: rgb(254, 194, 235);
+}
+
+#menu div#menu__containerDesk {
+  display: none;
+  left: 0;
+  position: initial;
+  width: auto;
+  height: 100%;
+  font-size: 14px;
+  letter-spacing: 5px;
+  font-weight: 400;
+  background-color: transparent;
+}
+
+#menu div#menu__containerDesk > ul {
+  flex-direction: row;
+  margin-top: 20px;
+}
+#menu div#menu__containerDesk > ul li {
+  margin: 0 7px;
+  display: inline;
+}
+#menu div#menu__containerDesk > ul li a {
+  color: inherit;
+  transition: color 1s;
+  text-decoration: none;
+}
+#menu div#menu__containerDesk > ul li a:hover {
+  color: rgb(254, 194, 235);
 }
 
 @media only screen and (min-width: 600px) {
@@ -135,27 +164,12 @@
     font-size: 13px;
   }
 
-  #menu div#menu__container {
-    left: 0;
-    position: initial;
-    width: auto;
-    height: 100%;
-    font-size: 14px;
-    letter-spacing: 5px;
-    font-weight: 400;
-    background-color: transparent;
-  }
-  #menu div#menu__container i#iconCloseMenu {
+  #menu div#menu__containerMobile {
     display: none;
   }
 
-  #menu div#menu__container > ul {
-    flex-direction: row;
-    margin-top: 10px;
-  }
-  #menu div#menu__container > ul li {
-    margin: 0 7px;
-    display: inline;
+  #menu div#menu__containerDesk {
+    display: block;
   }
 }
 section.section.about div.section__content div.containerFlex {
@@ -191,7 +205,7 @@ section.section.about div.section__content div.containerFlex div.photo a:nth-chi
   right: 15%;
 }
 section.section.about div.section__content div.containerFlex div.photo a:hover {
-  color: #2d9687;
+  color: rgb(45, 150, 135);
 }
 section.section.about div.section__content div.containerFlex p {
   font-size: 1.3rem;
@@ -199,7 +213,7 @@ section.section.about div.section__content div.containerFlex p {
   font-weight: 300;
 }
 section.section.about div.section__content div.containerFlex p > span {
-  color: #fec2eb;
+  color: rgb(254, 194, 235);
   padding: 30px 0;
   display: block;
   font-size: 1.1rem;
@@ -209,10 +223,10 @@ section.section.about div.section__content button {
   font-family: inconsolata, monospace;
   color: white;
   background-color: transparent;
-  border: 1px solid #c22085;
+  border: 1px solid rgb(194, 32, 133);
 }
 section.section.about div.section__content button:hover {
-  border: 1.5px solid #2d9687;
+  border: 1.5px solid rgb(45, 150, 135);
   transition: border 0.5s;
 }
 
@@ -223,11 +237,11 @@ section.section.projects div.section__content {
 }
 section.section.projects div.section__content h1.section__head {
   grid-column: 1/-1;
-  color: #fec2eb;
+  color: rgb(254, 194, 235);
 }
 section.section.projects div.section__content div.section__end {
   grid-column: 1/-1;
-  color: #fec2eb;
+  color: rgb(254, 194, 235);
 }
 section.section.projects div.section__content div.card {
   grid-column: 1/-1;
@@ -239,7 +253,7 @@ section.section.projects div.section__content div.card {
   border-radius: 10px;
   padding: 10px;
   margin: 0 auto;
-  border: 1.5px solid #c22085;
+  border: 1.5px solid rgb(194, 32, 133);
   /*             div.card__iconsTech{
                   //background-color: black;
                   padding: 30px 0;
@@ -285,7 +299,7 @@ section.section.projects div.section__content div.card span.card__anchors {
   padding: 10px;
 }
 section.section.projects div.section__content div.card span.card__anchors a {
-  color: #2d9687;
+  color: rgb(45, 150, 135);
   cursor: pointer;
   margin-right: 24px;
 }
@@ -342,7 +356,7 @@ div.banner div.banner__content h1.title span.high {
   line-height: 57px;
   font-size: 30px;
   font-weight: bold;
-  color: #fec2eb;
+  color: #fec3eb;
   text-transform: uppercase;
   font-family: inconsolata, monospace;
   animation: typingTitle 0.6s 1s steps(13) forwards;
@@ -416,14 +430,14 @@ section.section.contact .section__content form.contact__form input[type=email], 
   padding-left: 90;
   padding-left: 90px;
   font-family: inherit;
-  color: #fec2eb;
+  color: rgb(254, 194, 235);
   font-size: 1.3rem;
   background: none;
   background: transparent;
   outline: none;
   border: none;
   -webkit-appearance: none;
-  border-bottom: 1px solid #c22085;
+  border-bottom: 1px solid rgb(194, 32, 133);
 }
 section.section.contact .section__content form.contact__form textarea {
   min-height: 100px;
@@ -445,19 +459,19 @@ section.section.contact .section__content form.contact__form input[type=Submit] 
   font-family: inconsolata, monospace;
   color: white;
   background-color: transparent;
-  border: 1px solid #c22085;
+  border: 1px solid rgb(194, 32, 133);
 }
 section.section.contact .section__content form.contact__form input[type=Submit]:hover {
-  border: 1.5px solid #2d9687;
+  border: 1.5px solid rgb(45, 150, 135);
   transition: border 1s;
 }
 
 footer {
   padding: 0 20px;
-  color: #fec2eb;
+  color: rgb(254, 194, 235);
 }
 footer span > i {
-  color: #c22085;
+  color: rgb(194, 32, 133);
 }
 
 @media only screen and (min-width: 400px) {

@@ -1,6 +1,6 @@
 const BODY = document.querySelector("body");
 const MENU = document.getElementById("menu");
-const CONTAINER_MENU = document.getElementById("menu__container");
+const CONTAINER_MENUMobile = document.getElementById("menu__containerMobile");
 const HIGH_LETTER = document.querySelector(".highLetter");
 const PHOTO = document.querySelector(".photo");
 const FORM = document.getElementById("contactForm");
@@ -8,16 +8,17 @@ const SPAN_NAME = document.querySelector('span[data-text="Name"]');
 const SPAN_EMAIL = document.querySelector('span[data-text="Email"]');
 const SPAN_MESSAGE = document.querySelector('span[data-text="Message"]');
 const BTN_DOWNLOAD = document.getElementById("btnDownload");
+const WIDTH = window.innerWidth;
 
 // Event click all menu
 MENU.addEventListener("click", (event) => {
   // console.log(event.target);
   if (event.target.id === "iconOpenMenu") {
-    CONTAINER_MENU.style.display = "flex";
-    CONTAINER_MENU.style.right = "0";
+    CONTAINER_MENUMobile.style.display = "flex";
+    CONTAINER_MENUMobile.style.right = "0";
     BODY.style.overflowY = "hidden";
   } else if (event.target.id === "iconCloseMenu") {
-    CONTAINER_MENU.style.right = "-100%";
+    CONTAINER_MENUMobile.style.right = "-100%";
     BODY.style.overflowY = "scroll";
   }
 });

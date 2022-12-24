@@ -21,13 +21,20 @@
             <!-- bottom open menu -->
             <div class="menu__icon"><!-- fa-lg o fa-2x--><i id="iconOpenMenu" class="fas fa-bars fa-lg"></i></div>
             <!-- main menu -->
-            <div id="menu__container">
+            <div id="menu__containerMobile">
                 <!-- bottom close menu -->
                 <i id="iconCloseMenu" class="fas fa-times fa-lg"></i>
                 <ul>
                     <li><a href="#projects" onclick=" hiddenContainerMenu()" >Projects</a></li>
                     <li><a href="#about" onclick=" hiddenContainerMenu()" >About</a></li>
                     <li><a href="#contact" onclick=" hiddenContainerMenu()" >Contact</a></li>
+                </ul>
+            </div>
+            <div id="menu__containerDesk">
+                <ul>
+                    <li><a href="#projects"  >Projects</a></li>
+                    <li><a href="#about"  >About</a></li>
+                    <li><a href="#contact"  >Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -216,8 +223,8 @@
     </footer>
     <script>
         function hiddenContainerMenu(){
-            document.getElementById("menu__container").style.display='none';
-            document.querySelector('body').style.overflowY = 'scroll';
+                document.getElementById("menu__containerMobile").style.display='none';
+                document.querySelector('body').style.overflowY = 'scroll';
         }
     </script>
     <script type="module" src="./src/index.js"></script>
